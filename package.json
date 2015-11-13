@@ -4,7 +4,7 @@
   "description": "Yhoc.co website - A search tool for medical student",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\""
   },
   "author": "Khoa Nguyen",
   "license": "ISC",
@@ -22,6 +22,7 @@
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.0",
+    "surge": "^0.17.2",
     "tiny-lr": "^0.2.1"
   },
   "dependencies": {}
