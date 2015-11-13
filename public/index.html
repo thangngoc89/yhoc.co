@@ -12,26 +12,22 @@
 </head>
 
 <body class="homepage">
-    <div class="container-fluid">
+    <div class="container-fluid" id="main">
         <div class="row">
-            <div class="col-xs-12" id="main">
-                <div class="row">
-                    <a href="/" id="logo"></a>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6 col-sm-4">
-                        <h1>Hãy là người học thông minh</h1>
-                    </div>
-                </div>
-                <div class="row search-group">
-                    <div class="col-sm-6">
-                        <form id="command" action="/" method="GET">
-                            <input id="stormSearch" name="q" class="search topbar-search ui-autocomplete-input" placeholder="nhập từ khóa để tìm kiếm..." autofocus="autofcus" type="search">
-                            <button class="close-icon" type="reset"></button>
-                            <button class="btn btn-primary btn-search"><span class="icon-search"></span></button>
-                        </form>
-                    </div>
-                </div>
+            <a href="/" id="logo"></a>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-2 col-md-8">
+                <h1>Hãy là người học thông minh</h1>
+            </div>
+        </div>
+        <div class="row search-group">
+            <div class="col-md-8">
+                <form id="command" action="/search/" method="GET">
+                    <input id="stormSearch" name="q" class="search topbar-search ui-autocomplete-input" placeholder="nhập từ khóa để tìm kiếm..." autofocus="autofcus" type="search">
+                    <button class="close-icon" type="reset"></button>
+                    <button class="btn btn-primary btn-search"><span class="icon-search"></span></button>
+                </form>
             </div>
         </div>
     </div><!-- /.container -->
