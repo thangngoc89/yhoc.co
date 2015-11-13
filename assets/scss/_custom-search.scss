@@ -1,0 +1,20 @@
+/* Remove result background */
+.cse .gsc-control-cse, .gsc-control-cse {
+  font-family: $font-main !important;
+  background: none !important;
+  border: none !important;
+}
+
+/* Modify search form */
+.gsc-input {
+  padding-right: 0 !important;
+}
+
+.cse input.gsc-input, input.gsc-input {
+  height: 50px;
+}
+
+.cse input.gsc-search-button, input.gsc-search-button {
+  height: 50px !important;
+}
+

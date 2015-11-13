@@ -27,6 +27,12 @@ server.use(livereload({
 
 server.use(express.static('./public'));
 
+var sass_dev = function() {
+  return {
+    includePaths: ['assets/scss']
+  }
+};
+
 //Task for sass using libsass through gulp-sass
 gulp.task('sass', function(){
   gulp.src('assets/scss/app.scss')

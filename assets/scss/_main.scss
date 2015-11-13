@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
   width: 100%;
+  margin: 0;
 }
 
 a {
@@ -20,7 +21,10 @@ body.homepage {
   background-color: $main-color;
   overflow-x: hidden;
 }
-
+.responsive-img {
+  width: 100%;
+  height: auto;
+}
 .homepage #main {
   color: #fff;
   padding: 50px 0 50px 0;
@@ -43,8 +47,7 @@ body.homepage {
   #logo {
     margin: 50px 0;
     img {
-      width: 100%;
-      height: auto;
+      @extend .responsive-img;
     }
   }
 
@@ -54,12 +57,36 @@ body.homepage {
   }
 
   .slogan {
-    //margin: 0;
     margin: 0 8px;
   }
 
   #queries {
     margin-top: 10px;
   }
-
 }
+
+#result {
+
+  #logo {
+    img {
+      @extend .responsive-img;
+    }
+  }
+
+  #topbar {
+    background: $main-color;
+  }
+
+  aside#sidebar {
+
+    margin: 10px 0;
+
+    .box {
+      background: #fff;
+      padding: 10px 20px;
+      border-radius: 3px;
+      border: none;
+    }
+  }
+}
+

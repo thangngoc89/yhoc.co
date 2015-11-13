@@ -6,21 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="/app.css" />
     <title>Tài liệu Y Khoa - Yhoc.co</title>
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="container">
-            <div class="col-xs-8 col-xs-offset-2 topbar">
-                <gcse:searchbox></gcse:searchbox>
-            </div>
-
-            <div class="col-xs-8 col-xs-offset-2">
-                <gcse:searchresults></gcse:searchresults>
-            </div>
+<div class="container-fluid" id="result">
+    <div class="row" id="topbar">
+        <div class="col-xs-2">
+            <a href="/" id="logo">
+                <img src="/logo/logo-white.png" />
+            </a>
         </div>
+        <div class="col-xs-8">
+            <gcse:searchbox></gcse:searchbox>
+        </div>
+    </div>
+    <aside class="row">
+        <div class="col-xs-8">
+            <gcse:searchresults></gcse:searchresults>
+        </div>
+        <aside class="col-xs-3" id="sidebar">
+            <div class="box">
+                <h1>Nhận sách mới mỗi ngày</h1>
+
+            </div>
+        </aside>
     </div>
 </div>
 
