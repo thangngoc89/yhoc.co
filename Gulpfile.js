@@ -9,6 +9,7 @@ var gulp = require('gulp'),
   notify = require('gulp-notify'),
   plumber = require('gulp-plumber'),
   pixrem = require('gulp-pixrem'),
+  //mode = require('gulp-mode')(),
   livereloadport = 35729,
   serverport = 5000;
 
@@ -26,7 +27,8 @@ gulp.task('sass', function(){
   gulp.src('assets/scss/app.scss')
     .pipe(plumber({errorHandler: errorAlert}))
     .pipe(sass({
-      includePaths: ['assets/scss']
+      includePaths: ['assets/scss'],
+      outputStyle: 'compressed'
     }))
     .pipe(pixrem())
     .pipe(gulp.dest('public'))

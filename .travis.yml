@@ -2,7 +2,6 @@ language: node_js
 node_js:
   - "4.2"
 after_success:
-  - gulp build
   - surge --project ./public --domain yhoc.co
 cache:
   directories:
