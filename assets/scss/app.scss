@@ -1,6 +1,9 @@
-@import 'config';
-@import 'main';
+@charset "UTF-8";
 
-#main {
-  color: white;
-}
+@import '_config';
+@import '_bootstrap';
+@import '_layout';
+@import '_main';
+@import '_logo';
+@import '_input';
+@import '_search-group';

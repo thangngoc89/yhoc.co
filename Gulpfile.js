@@ -5,7 +5,9 @@ var gulp = require('gulp'),
   refresh = require('gulp-livereload'),
   lrserver = require('tiny-lr')(),
   express = require('express'),
-  livereload = require('connect-livereload')
+  livereload = require('connect-livereload'),
+  notify = require('gulp-notify'),
+  plumber = require('gulp-plumber'),
   livereloadport = 35729,
   serverport = 5000;
 
@@ -15,15 +17,17 @@ var server = express();
 server.use(livereload({
   port: livereloadport
 }));
-server.use(express.static('./build'));
+
+server.use(express.static('./public'));
 
 //Task for sass using libsass through gulp-sass
 gulp.task('sass', function(){
   gulp.src('assets/scss/app.scss')
+    .pipe(plumber({errorHandler: errorAlert}))
     .pipe(sass({
       includePaths: ['assets/scss']
-    }).on('error', sass.logError))
-    .pipe(gulp.dest('build'))
+    }))
+    .pipe(gulp.dest('public'))
     .pipe(refresh(lrserver));
 });
 
@@ -32,25 +36,16 @@ gulp.task('browserify', function(){
   gulp.src('assets/js/*.js')
     .pipe(browserify())
     .pipe(concat('bundle.js'))
-    .pipe(gulp.dest('build'))
-    .pipe(refresh(lrserver));
-
-});
-
-//Task for moving html-files to the build-dir
-//added as a convenience to make sure this gulpfile works without much modification
-gulp.task('html', function(){
-  gulp.src('views/*.html')
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('public'))
     .pipe(refresh(lrserver));
 });
 
 //Convenience task for running a one-off build
-gulp.task('build', ['html', 'browserify', 'sass']);
+gulp.task('build', ['browserify', 'sass']);
 
 gulp.task('serve', function() {
   //Set up your static fileserver, which serves files in the build dir
-  server.listen(serverport);
+  server.listen(serverport, '0.0.0.0');
 
   //Set up your livereload server
   lrserver.listen(livereloadport);
@@ -64,8 +59,12 @@ gulp.task('watch', function() {
   //Add watching on js-files
   gulp.watch('assets/js/*.js', ['browserify']);
 
-  //Add watching on html-files
-  gulp.watch('views/*.html', ['html']);
 });
 
 gulp.task('default', ['build', 'serve', 'watch']);
+
+function errorAlert(error){
+  notify.onError({title: "SCSS Error", message: "Check your terminal", sound: "Sosumi"})(error); //Error Notification
+  console.log(error.toString());//Prints Error to Console
+  this.emit("end"); //End function
+};

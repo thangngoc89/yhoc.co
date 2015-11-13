@@ -1,1 +1,4 @@
 node_modules/
+bower_components/
+./public/app.css
+./public/bundle.js
