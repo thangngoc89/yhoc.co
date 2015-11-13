@@ -8,6 +8,7 @@ var gulp = require('gulp'),
   livereload = require('connect-livereload'),
   notify = require('gulp-notify'),
   plumber = require('gulp-plumber'),
+  pixrem = require('gulp-pixrem'),
   livereloadport = 35729,
   serverport = 5000;
 
@@ -27,6 +28,7 @@ gulp.task('sass', function(){
     .pipe(sass({
       includePaths: ['assets/scss']
     }))
+    .pipe(pixrem())
     .pipe(gulp.dest('public'))
     .pipe(refresh(lrserver));
 });
@@ -41,7 +43,7 @@ gulp.task('browserify', function(){
 });
 
 //Convenience task for running a one-off build
-gulp.task('build', ['browserify', 'sass']);
+gulp.task('build', ['sass']);
 
 gulp.task('serve', function() {
   //Set up your static fileserver, which serves files in the build dir
@@ -57,7 +59,7 @@ gulp.task('watch', function() {
   gulp.watch('assets/scss/*.scss',['sass']);
 
   //Add watching on js-files
-  gulp.watch('assets/js/*.js', ['browserify']);
+  //gulp.watch('assets/js/*.js', ['browserify']);
 
 });
 
