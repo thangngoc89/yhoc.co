@@ -3,6 +3,11 @@ html, body {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: $color-grey;
+}
+
 body {
   background: $sub-color;
   font-family: $font-main;
@@ -51,6 +56,10 @@ body.homepage {
   .slogan {
     //margin: 0;
     margin: 0 8px;
+  }
+
+  #queries {
+    margin-top: 10px;
   }
 
 }
