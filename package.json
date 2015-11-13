@@ -5,7 +5,7 @@
   "main": "app.js",
   "private": true,
   "scripts": {
-    "test": "gulp build --production"
+    "build": "gulp build --production"
   },
   "author": "Khoa Nguyen",
   "license": "MIT",
