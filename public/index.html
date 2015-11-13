@@ -14,15 +14,17 @@
 <body class="homepage">
     <div class="container-fluid" id="main">
         <div class="row">
-            <a href="/" id="logo"></a>
+            <div class="col-xs-8" id="logo">
+                <img src="logo/logo-white.png"/>
+            </div>
         </div>
         <div class="row">
-            <div class="col-xs-10 col-xs-offset-2 col-md-8">
-                <h1>Hãy là người học thông minh</h1>
+            <div class="col-xs-10 slogan">
+                <h1>Tìm kiếm tài liệu y khoa</h1>
             </div>
         </div>
         <div class="row search-group">
-            <div class="col-md-8">
+            <div class="col-xs-10">
                 <form id="command" action="/search/" method="GET">
                     <input id="stormSearch" name="q" class="search topbar-search ui-autocomplete-input" placeholder="nhập từ khóa để tìm kiếm..." autofocus="autofcus" type="search">
                     <button class="close-icon" type="reset"></button>
