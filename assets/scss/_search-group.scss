@@ -1,12 +1,10 @@
 .search-group {
   width: 100%;
-  padding: 0;
   margin: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: webkit-flex;
   white-space: nowrap;
   position: relative;
   padding: 50px 15px 0 15px;
@@ -34,14 +32,12 @@
 }
 .search-group input.topbar-search {
   font-family: arial,sans-serif;
-  line-height: 1;
   width: 100%;
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   border-radius: 4px 0 0 4px;
-  border-right: none !important;
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
   padding: 0 10px;

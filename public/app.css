@@ -739,7 +739,7 @@ body {
 
 body.homepage {
   background-color: #2480DD;
-  overflow: hidden; }
+  overflow-x: hidden; }
 
 .homepage #main {
   color: #fff;
@@ -764,44 +764,6 @@ body.homepage {
     justify-content: center; }
   .homepage #main .search-form {
     margin-top: 2rem; }
-
-#logo {
-  display: block;
-  position: relative;
-  width: calc(501px / 2);
-  height: calc(140px / 2);
-  text-align: left;
-  text-decoration: none;
-  margin: 0 auto;
-  outline: none; }
-
-#logo:before {
-  display: block;
-  content: "";
-  background: url("/logo/logo.svg") center center no-repeat;
-  background-size: contain;
-  margin: 0 auto;
-  max-width: 100%;
-  width: 100%;
-  height: 100%; }
-
-#logo:after {
-  content: "Tìm kiếm tài liệu y khoa";
-  font-family: "Museo Sans Rounded", "museo-sans-rounded", sans-serif;
-  text-align: center;
-  display: inline-block;
-  width: inherit;
-  margin-top: 15px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 700;
-  font-size: 20px;
-  color: #66a6e7; }
-
-.top-bar #logo {
-  width: 80px;
-  height: 40px;
-  background-size: cover; }
 
 input[type='number'],
 input[type='text'],
@@ -853,15 +815,51 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
+#logo {
+  display: block;
+  position: relative;
+  width: calc(501px / 2);
+  height: calc(140px / 2);
+  text-align: left;
+  text-decoration: none;
+  margin: 0 auto;
+  outline: none; }
+
+#logo:before {
+  display: block;
+  content: "";
+  background: url("/logo/logo.svg") center center no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  height: 100%; }
+
+#logo:after {
+  content: "Tìm kiếm tài liệu y khoa";
+  font-family: "Museo Sans Rounded", "museo-sans-rounded", sans-serif;
+  text-align: center;
+  display: inline-block;
+  width: inherit;
+  margin-top: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 20px;
+  color: #66a6e7; }
+
+.top-bar #logo {
+  width: 80px;
+  height: 40px;
+  background-size: cover; }
+
 .search-group {
   width: 100%;
-  padding: 0;
   margin: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: webkit-flex;
   white-space: nowrap;
   position: relative;
   padding: 50px 15px 0 15px; }
@@ -889,14 +887,12 @@ input[type="search"]::-webkit-search-decoration {
 
 .search-group input.topbar-search {
   font-family: arial,sans-serif;
-  line-height: 1;
   width: 100%;
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   border-radius: 4px 0 0 4px;
-  border-right: none !important;
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
   padding: 0 10px;
