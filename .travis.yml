@@ -1,8 +1,13 @@
 language: node_js
 node_js:
   - "4.2"
+script:
+  - npm run test
+  - npm install bower
+  - bower insall
 after_success:
   - surge --project ./public --domain yhoc.co
 cache:
   directories:
     - node_modules
+    - bower_components

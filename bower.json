@@ -1,0 +1,27 @@
+{
+  "name": "yhoc.co",
+  "description": "Yhoc.co website - A search tool for medical student",
+  "main": "app.js",
+  "authors": [
+    "Khoa Nguyen"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "yhoc.co",
+    "search",
+    "google"
+  ],
+  "homepage": "https://github.com/thangngoc89/yhoc.co",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha"
+  }
+}

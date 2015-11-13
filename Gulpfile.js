@@ -9,9 +9,14 @@ var gulp = require('gulp'),
   notify = require('gulp-notify'),
   plumber = require('gulp-plumber'),
   pixrem = require('gulp-pixrem'),
-  //mode = require('gulp-mode')(),
   livereloadport = 35729,
   serverport = 5000;
+
+var mode = require('gulp-mode')({
+  modes: ["production", "development"],
+  default: "development",
+  verbose: false
+});
 
 //We only configure the server here and start it only when running the watch task
 var server = express();
