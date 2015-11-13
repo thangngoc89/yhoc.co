@@ -30,7 +30,7 @@ server.use(express.static('./public'));
 //Task for sass using libsass through gulp-sass
 gulp.task('sass', function(){
   gulp.src('assets/scss/app.scss')
-    .pipe(plumber({errorHandler: errorAlert}))
+    .pipe(mode.development(plumber({errorHandler: errorAlert})))
     .pipe(sass({
       includePaths: ['assets/scss'],
       outputStyle: 'compressed'

@@ -4,7 +4,7 @@ node_js:
 script:
   - npm run test
   - npm install bower
-  - bower insall
+  - bower install
 after_success:
   - surge --project ./public --domain yhoc.co
 cache:
