@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Yhoc.co website - A search tool for medical student",
   "main": "app.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\""
   },
