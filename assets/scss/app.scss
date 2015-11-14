@@ -8,4 +8,8 @@
 @import '_input';
 @import '_search-group';
 @import '_topbar';
-@import 'custom-search';
+@import '_custom-search';
+
+/* Page styling */
+@import '_page/_homepage';
+@import '_page/_resultpage';

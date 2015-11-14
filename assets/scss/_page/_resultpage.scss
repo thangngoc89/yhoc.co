@@ -1,0 +1,98 @@
+
+/* All styling of result page */
+#result-page {
+
+  #topbar {
+    background: $main-color;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+    #logo {
+      align-self: center;
+      margin-left: 0;
+
+      img {
+        @extend .responsive-img;
+
+        @media (max-width: 34em) {
+          min-height: 30px;
+        }
+      }
+    }
+
+    #searchbox {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  #content {
+    margin-top: 70px;
+
+    #result, aside#sidebar{
+      @media (max-width: 34em) {
+        margin: 0;
+        padding: 0
+      }
+    }
+
+    aside#sidebar {
+
+      margin: 10px 0;
+
+
+      .widget {
+        background: #fff;
+        padding: 20px;
+        border-radius: 3px;
+        border: none;
+        margin-bottom: 40px;
+        background: #fff;
+      }
+
+      .widget-content {
+
+        h1 {
+          font-size: 24px;
+        }
+
+        form {
+          display: flex;
+          width: 100%;
+        }
+
+        .input  {
+          border: solid 1px $main-color;
+          font-family: $font-main;
+          line-height: 50px;
+          margin: 0;
+          padding: 5px 10px;
+          width: 100%;
+        }
+
+        input#email {
+          @extend .input;
+          border-radius: 4px 0 0 4px;
+          margin-right: 0;
+          padding-right: 0;
+          width: 80%
+        }
+
+        button.btn-submit {
+          @extend .input;
+          border-radius: 0 4px 4px 0;
+          background: $main-color;
+          color: #fff;
+          width: 20%;
+        }
+        ul {
+          padding-left: 0;
+        }
+        li {
+          list-style-type: none;
+        }
+      }
+    }
+  }
+}
