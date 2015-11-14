@@ -69,7 +69,8 @@ gulp.task('serve', function() {
 gulp.task('watch', function() {
 
   //Add watching on sass-files
-  gulp.watch('assets/scss/*.scss',['sass']);
+  gulp.watch('assets/scss/*.scss',['sass'])
+  gulp.watch('assets/scss/*/*.scss',['sass']);
 
   //Add watching on js-files
   //gulp.watch('assets/js/*.js', ['browserify']);

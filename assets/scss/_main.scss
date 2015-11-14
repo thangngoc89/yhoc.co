@@ -27,6 +27,22 @@ body {
   height: auto;
 }
 
+.site-title {
+  font-size: 42px;
+  font-family: Leckerli One,sans-serif;
+  line-height: 1;
+  margin: 0;
+  a {
+    color: #fff;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+
+  @media (max-width: 32em) {
+    font-size: 30px;
+  }
+}
 
 .site-footer {
   background-color: #222;

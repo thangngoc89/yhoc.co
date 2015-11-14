@@ -9,7 +9,7 @@ body.homepage {
   align-items: center;
   justify-content: center;
 
-  h1 {
+  .slogan h1{
     margin: 0;
     padding: 0;
     font-family: $font-sub;
@@ -23,9 +23,16 @@ body.homepage {
   }
 
   #logo {
-    margin: 50px 0;
-    img {
-      @extend .responsive-img;
+    margin: 40px 0;
+  }
+
+  .site-title {
+    font-size: 90px;
+    font-family: Leckerli One, sans-serif;
+    text-align: center;
+
+    @media (max-width: 32em) {
+      font-size: 70px;
     }
   }
 

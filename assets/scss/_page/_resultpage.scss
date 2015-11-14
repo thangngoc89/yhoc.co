@@ -1,4 +1,3 @@
-
 /* All styling of result page */
 #result-page {
 
@@ -10,14 +9,10 @@
 
     #logo {
       align-self: center;
-      margin-left: 0;
+      margin-left: 20px;
 
-      img {
-        @extend .responsive-img;
-
-        @media (max-width: 34em) {
-          min-height: 30px;
-        }
+      @media (max-width: 32em) {
+        margin-left: 0;
       }
     }
 
