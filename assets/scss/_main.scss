@@ -6,7 +6,11 @@ html, body {
 
 a {
   text-decoration: none;
-  color: $color-grey;
+  color: $main-color;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 body {
@@ -62,6 +66,10 @@ body.homepage {
 
   #queries {
     margin-top: 10px;
+
+    a {
+      color: $color-grey;
+    }
   }
 }
 
@@ -96,27 +104,77 @@ body.homepage {
   #content {
     margin-top: 70px;
 
-    #result, aside#sidebar {
+    #result, aside#sidebar{
       @media (max-width: 34em) {
-        padding: 0;
         margin: 0;
+        padding: 0
       }
-    }
-    #result {
-
     }
 
     aside#sidebar {
 
       margin: 10px 0;
 
-      .box {
+
+      .widget {
         background: #fff;
-        padding: 10px 20px;
+        padding: 20px;
         border-radius: 3px;
         border: none;
+        margin-bottom: 40px;
+        background: #fff;
+      }
+
+      .widget-content {
+
+        h1 {
+          font-size: 24px;
+        }
+
+        form {
+          display: flex;
+          width: 100%;
+        }
+
+        .input  {
+          border: solid 1px $main-color;
+          font-family: $font-main;
+          line-height: 50px;
+          margin: 0;
+          padding: 5px 10px;
+          width: 100%;
+        }
+
+        input#email {
+          @extend .input;
+          border-radius: 4px 0 0 4px;
+          margin-right: 0;
+          padding-right: 0;
+          width: 80%
+        }
+
+        button.btn-submit {
+          @extend .input;
+          border-radius: 0 4px 4px 0;
+          background: $main-color;
+          color: #fff;
+          width: 20%;
+        }
+        ul {
+          padding-left: 0;
+        }
+        li {
+          list-style-type: none;
+        }
       }
     }
   }
 }
 
+.site-footer {
+  background-color: #222;
+  color: #999;
+  padding: 30px 0;
+  text-align: center;
+  width: 100%;
+}
