@@ -2,11 +2,9 @@ language: node_js
 node_js:
   - "4.2"
 script:
-  - npm install bower
-  - bower install
   - npm run build
 after_success:
-  - surge --project ./public --domain yhoc.co
+  - npm run deploy
 cache:
   directories:
     - node_modules

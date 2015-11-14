@@ -5,7 +5,8 @@
   "main": "app.js",
   "private": true,
   "scripts": {
-    "build": "gulp build --production"
+    "build": "gulp build --production",
+    "deploy": "surge --project ./public --domain=yhoc.co"
   },
   "author": "Khoa Nguyen",
   "license": "MIT",
@@ -25,7 +26,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.0",
     "surge": "^0.17.2",
-    "tiny-lr": "^0.2.1"
+    "tiny-lr": "^0.2.1",
+    "bower": "^1.6.5"
   },
   "dependencies": {}
 }
