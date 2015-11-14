@@ -33,9 +33,9 @@ rules:
     -
       style: uppercase
   indentation:
-    - 2
-    -
-      size: 2
+    - size: 2
+  brace-style:
+    - allow-single-line: false
   variable-for-property:
     - 2
     -
