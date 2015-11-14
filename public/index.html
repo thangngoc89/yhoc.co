@@ -27,20 +27,16 @@
         </div>
         <div class="row search-group">
             <div class="col-xs-10 col-md-6">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <form id="command" action="/search/" method="GET">
-                            <input id="search" name="q" class="search topbar-search" placeholder="nhập từ khóa để tìm kiếm..." autofocus="autofcus" type="search">
-                            <button class="button" type="reset"><i class="bigger-icon icon-cancel-1"></i></button>
-                            <button class="button btn btn-search" type="submit"><i class="icon-search"></i></button>
-                        </form>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div id="queries">Được tìm kiếm nhiều: </div>
-                    </div>
-                </div>
+                <form id="command" action="/search/" method="GET">
+                    <input id="search" name="q" class="search topbar-search" placeholder="nhập từ khóa để tìm kiếm..." autofocus="autofcus" type="search">
+                    <button class="button" type="reset"><i class="bigger-icon icon-cancel-1"></i></button>
+                    <button class="button btn btn-search" type="submit"><i class="icon-search"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-md-6">
+                <div id="queries">Được tìm kiếm nhiều: </div>
             </div>
         </div>
     </div><!-- /.container -->
