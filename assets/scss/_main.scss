@@ -40,7 +40,11 @@ body {
   }
 
   @media (max-width: 32em) {
-    font-size: 30px;
+    font-size: 20px;
+  }
+
+  @media (max-width: 48em) {
+    font-size: 25px;
   }
 }
 
