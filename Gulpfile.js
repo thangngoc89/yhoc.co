@@ -27,18 +27,12 @@ server.use(livereload({
 
 server.use(express.static('./public'));
 
-var sass_dev = function() {
-  return {
-    includePaths: ['assets/scss']
-  }
-};
-
 //Task for sass using libsass through gulp-sass
 gulp.task('sass', function(){
-  gulp.src('assets/scss/app.scss')
+  gulp.src('src/sass/app.scss')
     .pipe(mode.development(plumber({errorHandler: errorAlert})))
     .pipe(sass({
-      includePaths: ['assets/scss'],
+      includePaths: ['src/sass'],
       outputStyle: 'compressed'
     }))
     .pipe(pixrem())
@@ -48,29 +42,39 @@ gulp.task('sass', function(){
 
 //Task for processing js with browserify
 gulp.task('browserify', function(){
-  gulp.src('assets/js/*.js')
+  gulp.src('src/js/*.js')
     .pipe(browserify())
     .pipe(concat('bundle.js'))
     .pipe(gulp.dest('public'))
     .pipe(refresh(lrserver));
 });
 
+gulp.task('copy-assets', function(){
+  gulp.src('src/assets/**')
+    .pipe(gulp.dest('public'))
+});
+
+gulp.task('views', function(){
+  gulp.src('src/views/**')
+    .pipe(gulp.dest('public'))
+});
+
 //Convenience task for running a one-off build
-gulp.task('build', ['sass']);
+gulp.task('build', ['sass', 'copy-assets', 'views']);
 
 gulp.task('serve', function() {
-  //Set up your static fileserver, which serves files in the build dir
   server.listen(serverport, '0.0.0.0');
-
-  //Set up your livereload server
   lrserver.listen(livereloadport);
 });
 
 gulp.task('watch', function() {
 
   //Add watching on sass-files
-  gulp.watch('assets/scss/*.scss',['sass'])
-  gulp.watch('assets/scss/*/*.scss',['sass']);
+  //gulp.watch('assets/scss/*.scss',['sass']);
+  gulp.watch('src/sass/*/*.scss',['sass']);
+  gulp.watch('src/assets/**',['copy-assets']);
+  gulp.watch('src/views/**',['views']);
+
 
   //Add watching on js-files
   //gulp.watch('assets/js/*.js', ['browserify']);
@@ -83,4 +87,4 @@ function errorAlert(error){
   notify.onError({title: "SCSS Error", message: "Check your terminal", sound: "Sosumi"})(error); //Error Notification
   console.log(error.toString());//Prints Error to Console
   this.emit("end"); //End function
-};
+}
