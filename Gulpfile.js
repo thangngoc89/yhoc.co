@@ -9,6 +9,7 @@ var gulp = require('gulp'),
   notify = require('gulp-notify'),
   plumber = require('gulp-plumber'),
   pixrem = require('gulp-pixrem'),
+  minifyHTML = require('gulp-minify-html'),
   livereloadport = 35729,
   serverport = 5000;
 
@@ -55,7 +56,14 @@ gulp.task('copy-assets', function(){
 });
 
 gulp.task('views', function(){
+  var opts = {
+    conditionals: true,
+    spare:true,
+    comments:true
+  };
+
   gulp.src('src/views/**')
+    .pipe(mode.production(minifyHTML(opts)))
     .pipe(gulp.dest('public'))
 });
 
