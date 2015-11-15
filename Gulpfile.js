@@ -78,8 +78,8 @@ gulp.task('serve', function() {
 gulp.task('watch', function() {
 
   //Add watching on sass-files
-  //gulp.watch('assets/scss/*.scss',['sass']);
-  gulp.watch('src/sass/*/*.scss',['sass']);
+  gulp.watch('src/sass/*.scss',['sass']);
+  gulp.watch('src/sass/**/*.scss',['sass']);
   gulp.watch('src/assets/**',['copy-assets']);
   gulp.watch('src/views/**',['views']);
 

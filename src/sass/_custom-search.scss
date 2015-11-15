@@ -17,4 +17,28 @@
 .cse input.gsc-search-button, input.gsc-search-button {
   height: 50px !important;
 }
+/* Tab */
+.cse .gsc-tabHeader.gsc-tabhInactive, .gsc-tabHeader.gsc-tabhInactive {
+  padding: 10px;
+}
+
+.cse .gsc-tabHeader.gsc-tabhActive, .gsc-tabHeader.gsc-tabhActive {
+  padding: 10px;
+}
+
+.gsc-results .gsc-cursor-box {
+  margin-top: 10px;
+}
+
+.gsc-results .gsc-cursor-page.gsc-cursor-current-page {
+  padding: 10px !important;
+  font-size: 16px;
+}
+
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+  @extend .gsc-cursor-current-page;
+  background: $color-grey;
+  text-decoration: none !important;
+}
+
 
