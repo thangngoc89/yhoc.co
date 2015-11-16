@@ -3,30 +3,17 @@ var gulp = require('gulp'),
   browserify = require('gulp-browserify'),
   concat = require('gulp-concat'),
   refresh = require('gulp-livereload'),
-  lrserver = require('tiny-lr')(),
-  express = require('express'),
-  livereload = require('connect-livereload'),
   notify = require('gulp-notify'),
   plumber = require('gulp-plumber'),
   pixrem = require('gulp-pixrem'),
   minifyHTML = require('gulp-minify-html'),
-  livereloadport = 35729,
-  serverport = 5000;
+  webserver = require('gulp-connect');
 
 var mode = require('gulp-mode')({
   modes: ["production", "development"],
   default: "development",
   verbose: false
 });
-
-//We only configure the server here and start it only when running the watch task
-var server = express();
-//Add livereload middleware before static-middleware
-server.use(livereload({
-  port: livereloadport
-}));
-
-server.use(express.static('./public'));
 
 //Task for sass using libsass through gulp-sass
 gulp.task('sass', function(){
@@ -38,7 +25,7 @@ gulp.task('sass', function(){
     }))
     .pipe(pixrem())
     .pipe(gulp.dest('public'))
-    .pipe(refresh(lrserver));
+    .pipe(webserver.reload())
 });
 
 //Task for processing js with browserify
@@ -47,12 +34,13 @@ gulp.task('browserify', function(){
     .pipe(browserify())
     .pipe(concat('bundle.js'))
     .pipe(gulp.dest('public'))
-    .pipe(refresh(lrserver));
+    .pipe(mode.development(webserver.reload()))
 });
 
 gulp.task('copy-assets', function(){
   gulp.src('src/assets/**')
     .pipe(gulp.dest('public'))
+    .pipe(mode.development(webserver.reload()))
 });
 
 gulp.task('views', function(){
@@ -65,14 +53,17 @@ gulp.task('views', function(){
   gulp.src('src/views/**')
     .pipe(mode.production(minifyHTML(opts)))
     .pipe(gulp.dest('public'))
+    .pipe(mode.development(webserver.reload()))
 });
 
 //Convenience task for running a one-off build
 gulp.task('build', ['sass', 'copy-assets', 'views']);
 
 gulp.task('serve', function() {
-  server.listen(serverport, '0.0.0.0');
-  lrserver.listen(livereloadport);
+  webserver.server({
+    root: 'public',
+    livereload: true,
+  });
 });
 
 gulp.task('watch', function() {
