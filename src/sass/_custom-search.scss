@@ -20,14 +20,16 @@
 /* Tab */
 .cse .gsc-tabHeader.gsc-tabhInactive, .gsc-tabHeader.gsc-tabhInactive {
   padding: 10px;
+  margin-top: 10px;
 }
 
 .cse .gsc-tabHeader.gsc-tabhActive, .gsc-tabHeader.gsc-tabhActive {
   padding: 10px;
+  margin-top: 10px;
 }
 
 .gsc-results .gsc-cursor-box {
-  margin-top: 10px;
+  border-top: none;
 }
 
 .gsc-results .gsc-cursor-page.gsc-cursor-current-page {
